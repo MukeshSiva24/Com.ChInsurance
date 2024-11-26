@@ -4,7 +4,7 @@ Background: Launch The Application
 Given Launch The CHInsurance Application "https://www.chinsurance.cc/"
 
 @Sanity
-Scenario Outline: Give Review and View Comapny Location in Map
+Scenario Outline: Give Review and View Company Location in Map
 When User click the service Module
 Then Validate dropdown data
 When user Click The personal Insurance
@@ -22,8 +22,9 @@ Examples:
 |Name|EmailID				|Subject	|Message|Submit Message|
 |Mani|ma3@gmail.com|Best Point|Good		|Thanks for submitting!|
 
+
 @Sanity
-Scenario: Veriy The Post
+Scenario Outline: Veriy The Post in Personal Insurance and give Comments
 When Click HI-V Blog Module
 And Click Personal Insurance
 Then Validate Latest Post is Visible in Top
@@ -31,6 +32,15 @@ When Click The First Post in Top
 Then Validate The Latest Post is Navigated
 When Click Like button
 Then Validate Number of Like is Visible
+When Click The Comment and Enter the Comments "<Comment>"
+And Click and Enter The Emoji and GIFI in Comment "<GIFI Search>"
+And Click Size in GIFI and Adjust it Compact mode
+And Click Aligment and Adjust it left
+And Click The Cancel button in Comment
+And Click the Discard button
+Examples:
+|Comment|GIFI Search|
+|Hi			|Happy|
 
 
 @Sanity
@@ -54,7 +64,6 @@ When Enter The UserName "<UserName>"
 And Enter The Password "<Password>"
 And Click The Login button
 Then Validate Invalide Message is Visible after login
-
 Examples:
 |UserName	|Password				|
 |Mukesh		|Mukeshsinsn@24|

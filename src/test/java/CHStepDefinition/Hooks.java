@@ -37,13 +37,14 @@ public class Hooks {
 					byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
 					scenario.attach(screenshot, "image/png", "Pass");
 					
-					Thread.sleep(3000);
-					base.browserQuit();
+					
 				}
 		}
 		catch(Exception e) {
 			System.out.println(e);
 		}
+		Thread.sleep(3000);
+		base.browserQuit();
 	}
 	
 	@AfterStep

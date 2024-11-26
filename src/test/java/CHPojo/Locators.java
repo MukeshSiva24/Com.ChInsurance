@@ -113,6 +113,54 @@ public class Locators {
 	@FindBy(xpath ="//span[@class=\"FYRNvd like-button-with-count__like-count\"]")
 	private WebElement likeNo;
 	
+	@FindBy(xpath ="//h2[text()='Comments']")
+	private WebElement comment;
+	
+	@FindBy(xpath ="//span[text()='HOME']")
+	private WebElement home;
+	
+	@FindBy(xpath ="(//span[text()='Write a comment...'])[2]")
+	private WebElement EnterComment;
+	
+	@FindBy(xpath="//p[@data-placeholder=\"Write a comment...\"]")
+	private WebElement writeComment;
+	
+	@FindBy(xpath="(//div[@class=\"sAQ0aY2\"])[1]")
+	private WebElement commentEmoji;
+	
+	@FindBy(xpath ="//div[text()='😎']")
+	private WebElement commentGethuEmoji;
+	
+	@FindBy(xpath ="(//div[@class=\"sAQ0aY2\"])[3]")
+	private WebElement commentGIF;
+	
+	@FindBy(xpath ="//input[@placeholder=\"Search for a GIF\"]")
+	private WebElement commentGIFISearch;
+	
+	@FindBy(xpath ="//div[@id=\"9pZw57AyqOHy47oSZq-parent\"]")
+	private WebElement commentHappyGIFI;
+	
+	@FindBy(xpath ="(//button[@class=\"u-H-i\"])[1]")
+	private WebElement commentGIFISize;
+	
+	@FindBy(xpath ="//div[text()='Compact']")
+	private WebElement commentGIFISizeCompact;
+	
+	@FindBy(xpath ="(//button[@class=\"u-H-i\"])[2]")
+	private WebElement commentGIFIAligment;
+	
+	@FindBy(xpath="//div[text()='Align left']")
+	private WebElement commentGIFILeftAligment;
+	
+	@FindBy(xpath ="//button[text()='Cancel']")
+	private WebElement commentCancel;
+	
+	@FindBy(xpath="//span[text()='Discard']")
+	private WebElement commentDiscard;
+	
+	
+	
+	
 	
 	
 	@FindBy(xpath ="//p[text()='CONTACT']")
@@ -386,6 +434,66 @@ public class Locators {
 
 	public WebElement getCreateAccountButton() {
 		return createAccountButton;
+	}
+
+	public WebElement getComment() {
+		return comment;
+	}
+
+	public WebElement getCommentEmoji() {
+		return commentEmoji;
+	}
+
+	public WebElement getCommentGethuEmoji() {
+		return commentGethuEmoji;
+	}
+
+	public WebElement getCommentGIF() {
+		return commentGIF;
+	}
+
+	public WebElement getCommentCancel() {
+		return commentCancel;
+	}
+
+	public WebElement getEnterComment() {
+		return EnterComment;
+	}
+
+	public WebElement getCommentGIFISearch() {
+		return commentGIFISearch;
+	}
+
+	public WebElement getCommentHappyGIFI() {
+		return commentHappyGIFI;
+	}
+
+	public WebElement getCommentGIFISize() {
+		return commentGIFISize;
+	}
+
+	public WebElement getCommentGIFISizeCompact() {
+		return commentGIFISizeCompact;
+	}
+
+	public WebElement getCommentGIFIAligment() {
+		return commentGIFIAligment;
+	}
+
+	public WebElement getCommentGIFILeftAligment() {
+		return commentGIFILeftAligment;
+	}
+
+	public WebElement getCommentDiscard() {
+		return commentDiscard;
+	}
+
+	public WebElement getHome() {
+		return home;
+	}
+
+	public WebElement getWriteComment() {
+		return writeComment;
 	}
 	
 	

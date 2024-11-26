@@ -19,9 +19,11 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -311,15 +313,11 @@ public void listFramesParent(List<WebElement> LWeb, WebElement Web) {
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 
 		js.executeScript("arguments[0].setAttribute('Value',"+Name+")",Web);
-//		js.executeScript("arguments[0].setAttribute('style','background:yellow;border:2px solid red')",colour);
-//		js.executeScript("arguments[0].scrollIntoView('true')",Web2);
-
-		
 	}
 	public void javaScriptValue(WebElement Web1, String Value) {
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 
-		js.executeScript("arguments[0].setAttribute('Value',"+Value+")",Web1);
+		js.executeScript("arguments[0].setAttribute('Value','"+Value+"')",Web1);
 
 	}
 	public void javaScriptClick(WebElement Web2) {
@@ -339,6 +337,30 @@ public void listFramesParent(List<WebElement> LWeb, WebElement Web) {
 
 		js.executeScript("arguments[0].scrollIntoView('false')",Web1);
 
+	}
+	
+	public void javaScriptScrollToLastPage() {
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	}
+	
+	public void javaScriptScrollTopPage() {
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, 0)");
+	}
+	
+	public void javaScriptScrollPageWithDimension(WebElement Web) {
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+        Point p = Web.getLocation();
+        int y = p.getY() - 250; //-250 it will show element with center of page
+        js.executeScript("window.scrollTo(" + p.getX() + "," + y + ")");
+      
+        }
+	
+	
+	public void javaScriptBackgroundColour(WebElement Web, String BGColourName, String BorderColourName) {
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style','background:"+ BGColourName +";border:2px solid "+ BorderColourName +"')",Web);
 	}
 
 	public void explicityWaitsClick(WebElement Web,int timesec) {

@@ -24,7 +24,7 @@ public void launch_the_ch_insurance_application(String url) {
 @When("User click the service Module")
 public void user_click_the_service_module() {
 	try {
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		base.explicityWaitsClick(locate.getMouseActionService(), 20);
 	}
 	catch (Exception e) {
@@ -91,7 +91,8 @@ public void validate_the_personal_insurance_page_is_navigated() {
 @When("user Click Policy Review")
 public void user_click_policy_review() {
 	try {
-		Thread.sleep(3000);
+		base.javaScriptScrollUp(locate.getReviewButton());
+		Thread.sleep(2000);
 		base.javaScriptClick(locate.getReviewButton());
 //		base.explicityWaitsClick(locate.getReviewButton(), 10);
 	}
@@ -141,7 +142,9 @@ public void user_click_the_map_and_satellite() {
 	try {
 //		base.frames(locate.getMapFrame());
 		base.frames(locate.getMapFrame1());
+		Thread.sleep(2000);
 		base.explicityWaitsClick(locate.getSatellite(), 30);	
+		Thread.sleep(2000);
 		 base.explicityWaitsClick(locate.getMap(), 10);
 		    }
 		catch (Exception e) {
@@ -318,6 +321,92 @@ public void validate_number_of_like_is_visible() {
     	System.out.println(e);
     }
 }
+
+@When("Click The Comment and Enter the Comments {string}")
+public void click_The_Comment_and_Enter_the_Comments(String comment) {
+    try {
+	base.javaScriptScrollToLastPage();
+    base.javaScriptScrollDown(locate.getHome());
+    Thread.sleep(3000);
+    base.javaScriptClick(locate.getEnterComment());
+    Thread.sleep(2000);
+    base.explicityWaitsSend(comment, locate.getWriteComment(), 20);
+    }
+    catch (Exception e){
+    	System.out.println(e);
+    }
+    
+}
+
+@When("Click and Enter The Emoji and GIFI in Comment {string}")
+public void click_and_Enter_The_Emoji_and_GIFI_in_Comment(String GIFISearch) {
+	try {
+    base.explicityWaitsClick(locate.getCommentEmoji(), 20);
+    base.explicityWaitsClick(locate.getCommentGethuEmoji(), 20);
+    base.explicityWaitsClick(locate.getCommentGIF(), 10);
+    base.explicityWaitsSend(GIFISearch, locate.getCommentGIFISearch(), 20);
+    Thread.sleep(2000);
+    base.explicityWaitsClick(locate.getCommentHappyGIFI(), 20);
+	}
+	  catch (Exception e){
+	    	System.out.println(e);
+	    }
+}
+
+
+@When("Click Size in GIFI and Adjust it Compact mode")
+public void click_Size_in_GIFI_and_Adjust_it_Compact_mode() {
+	try {
+	Thread.sleep(2000);
+	base.javaScriptClick(locate.getCommentGIFISize());
+	Thread.sleep(2000);
+    base.javaScriptClick(locate.getCommentGIFISizeCompact());
+	}  catch (Exception e){
+    	System.out.println(e);
+    }
+}
+
+@When("Click Aligment and Adjust it left")
+public void click_Aligment_and_Adjust_it_left() {
+	try {
+	Thread.sleep(2000);
+	base.javaScriptClick(locate.getCommentGIFIAligment());
+	Thread.sleep(2000);
+    base.javaScriptClick(locate.getCommentGIFILeftAligment());
+	}
+	  catch (Exception e){
+	    	System.out.println(e);
+	    }
+}
+@When("Click The Cancel button in Comment")
+public void click_The_Cancel_button_in_Comment() {
+	try {
+	Thread.sleep(2000);
+
+    base.explicityWaitsClick(locate.getCommentCancel(), 20);
+	}
+	  catch (Exception e){
+	    	System.out.println(e);
+	    }
+}
+
+@When("Click the Discard button")
+public void click_the_Discard_button() {
+	try {
+	Thread.sleep(2000);
+
+    base.explicityWaitsClick(locate.getCommentDiscard(), 20);
+	}
+	  catch (Exception e){
+	    	System.out.println(e);
+	    }
+}
+
+
+
+
+
+
 
 
 
