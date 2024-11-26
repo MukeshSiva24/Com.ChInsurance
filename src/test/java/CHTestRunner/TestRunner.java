@@ -10,9 +10,9 @@ import io.cucumber.junit.CucumberOptions;
 		features = "C:\\Users\\mukes\\eclipse-workspace\\Com.ChInsurance\\src\\test\\resources\\Task.feature",
 		glue = "CHStepDefinition",
 		tags = "@Sanity",
-		plugin = { "pretty", "html:test-output", "json:target/cucumber.json",
-		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, 
-//		plugin = {"html:target/Report.html","json:target/report.json"},
+//		plugin = { "pretty", "html:test-output", "json:target/cucumber.json",
+//		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, 
+		plugin = {"html:target/Report.html","json:target/report.json"},
 		dryRun = false,
 		monochrome = false
 		)
